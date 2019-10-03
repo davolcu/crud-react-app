@@ -1,2 +1,1 @@
-# crud-react-app
-Products CRUD made with React
+This a full responsive CRUD application made up with React: CRUD React App.
