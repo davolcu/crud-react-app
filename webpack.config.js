@@ -3,23 +3,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  // webpack will take the files from ./src/index
+  // Main entrypoint
   entry: './src/index',
 
-  // and output it into /dist as bundle.js
+  // Main output into /build as main.js
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, '/build'),
+    filename: 'main.js'
   },
 
-  // adding .ts and .tsx to resolve.extensions will help babel look for .ts and .tsx files to transpile
+  // It adds the typescript extensions to help on the transpile
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
   },
 
   module: {
     rules: [
-        // we use babel-loader to load our jsx and tsx files
+        // Babel loader to transpile the new JS versions
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
@@ -28,7 +28,7 @@ module.exports = {
         },
       },
 
-      // css-loader to bundle all the css files into one file and style-loader to add all the styles  inside the style tag of the document
+      // Scss extractor and conversor to CSS
       {
         test: /\.scss$/,
         use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader']
@@ -36,9 +36,10 @@ module.exports = {
     ]
   },
 
+  // Dynamic HTML webpack generator and CSS extractor
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './public/index.html'
     }),
     new MiniCSSExtractPlugin({
       fileName: 'styles.css'
