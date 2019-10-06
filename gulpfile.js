@@ -6,7 +6,8 @@ const gulp = require('gulp'),
     // An env variable should be set to decide between configurations but as its local environment, is not worth it
     webpackDevConfig = require('./webpack/webpack.dev.js'),
     webpackProdConfig = require('./webpack/webpack.prod.js'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    historyApiFallback = require('connect-history-api-fallback');
 
 // Arrow function to run webpack from Gulp
 const buildDevAssets = () => {
@@ -40,7 +41,8 @@ const buildServer = () => {
     browserSync.init({
         server: "./build",
         port: 8080,
-        host: "0.0.0.0"
+        host: "0.0.0.0",
+        middleware: [ historyApiFallback() ]
     });
 };
 
