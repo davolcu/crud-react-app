@@ -1,0 +1,34 @@
+// App colors and other variables
+@import "../../styles/colors.scss";
+@import "../../styles/media-queries.scss";
+
+// Custom styles for Header component
+#header {
+  width: 100%;
+  height: 60px;
+  padding: 15px 25px;
+  background-color: $background-color;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+
+  img {
+    height: 30px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $primary-color;
+    cursor: pointer;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+}

@@ -1,7 +1,5 @@
 const path = require('path'),
-    loaders = require('./loaders.js'),
-    plugins = require('./plugins.js'),
-    {CleanWebpackPlugin} = require('clean-webpack-plugin');
+    loaders = require('./loaders.js');
 
 module.exports = {
     // Main entry
@@ -23,18 +21,12 @@ module.exports = {
     // Conversion rules
     module: {
         rules: [
-            // JavaScript Loaders
+            // JavaScript Loader
             loaders.JSLoader,
-            // CSS Loaders
+            // CSS Loader
             loaders.CSSLoader,
+            // Img Loader
+            loaders.FileLoader
         ]
     },
-
-    // Dynamic HTML webpack generator and CSS extractor
-    plugins: [
-        new CleanWebpackPlugin(),
-        plugins.HtmlWebpackPlugin,
-        plugins.MiniCSSExtractPlugin,
-        plugins.TSLintPlugin
-    ]
 };

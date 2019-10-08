@@ -1,0 +1,88 @@
+// App colors and other variables
+@import "../../styles/colors.scss";
+@import "../../styles/media-queries.scss";
+
+// Custom variables for this view
+$content-background-color: lighten($primary-color, 75%);
+$div-content-background-color: lighten($content-background-color, 5%);
+
+// Custom styles for List view
+#main-section {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  margin: 60px auto 0;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#content {
+  background-color: $content-background-color;
+  color: $primary-color;
+
+  h1 {
+    max-width: 680px;
+    width: 100%;
+    margin: 25px auto 10px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+  }
+
+  > div {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto 25px;
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    font-size: 16px;
+
+    box-shadow: 0 0 7px 0 rgba(50, 50, 50, .65);
+    background-color: $div-content-background-color;
+
+    div {
+      padding: 5px;
+      border-bottom: 2px solid $secondary-color;
+
+      &:not(:nth-child(3n)) {
+        border-right: 2px solid $secondary-color;
+      }
+    }
+
+    .product-slot, .actions-slot {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+    }
+
+    .actions-slot {
+      justify-content: space-around;
+
+      a {
+        min-width: 75px;
+        margin: 10px 0;
+        padding: 10px 5px;
+        background-color: $secondary-color;
+        color: $div-content-background-color;
+
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 250ms linear;
+
+        &:hover {
+          background-color: $div-content-background-color;
+          color: $secondary-color;
+          border: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
+}

@@ -49,7 +49,20 @@ const CSSLoader = {
     ],
 };
 
+// Image loader to import them correctly on TS files
+const FileLoader = {
+    test: /\.(png|jpe?g|svg)$/,
+    exclude: /node_modules/,
+    use: {
+        loader: 'file-loader',
+        options: {
+            name: 'assets/[name].[ext]',
+        }
+    },
+};
+
 module.exports = {
     JSLoader: JSLoader,
-    CSSLoader: CSSLoader
+    CSSLoader: CSSLoader,
+    FileLoader: FileLoader
 };

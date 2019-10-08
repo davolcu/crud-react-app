@@ -10,7 +10,7 @@ const MiniCSSExtractPlugin = new _MiniCSSExtractPlugin({
 
 // MiniHtmlExtractor plugin
 const HtmlWebpackPlugin = new _HtmlWebpackPlugin({
-    template: __dirname + '/../public/index.html',
+    template: './public/index.html',
     minify: {
         collapseWhitespace: true
     }

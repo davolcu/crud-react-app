@@ -1,0 +1,13 @@
+// Min width lowest mobile resolution
+$min-width-1: 'only screen and (min-width: 320px)';
+// Min width tablet resolutions
+$min-width-2: 'only screen and (min-width: 768px)';
+// Min width standard for laptops (iPad horizontal)
+$min-width-3: 'only screen and (min-width: 1024px)';
+
+// Max width lowest mobile resolution
+$max-width-1: 'only screen and (min-width: 767px)';
+// Max width tablet resolutions
+$max-width-2: 'only screen and (min-width: 1023px)';
+// Max width standard for biggest laptops (break on 1440)
+$max-width-3: 'only screen and (min-width: 1440px)';

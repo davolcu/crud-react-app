@@ -14,7 +14,8 @@ const routes = {
 };
 
 const App = () => {
-    return useRoutes(routes) || <NotFoundView/>;
+    // It will route to the current URL and if nothing is found will show the WIP Default page
+    return useRoutes(routes) || <NotFoundView route={window.location.pathname}/>;
 };
 
 export default App;
