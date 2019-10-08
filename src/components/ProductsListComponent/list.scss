@@ -10,37 +10,37 @@ $div-content-background-color: lighten($content-background-color, 5%);
 #main-section {
   max-width: 1440px;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   margin: 60px auto 0;
 
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
 }
 
 #content {
   background-color: $content-background-color;
   color: $primary-color;
 
+  h1, > div {
+    width: 90%;
+  }
+
   h1 {
-    max-width: 680px;
-    width: 100%;
     margin: 25px auto 10px;
     padding: 10px;
 
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   > div {
-    max-width: 680px;
-    width: 100%;
     margin: 0 auto 25px;
-    padding: 25px;
+    padding: 15px 10px;
 
     display: grid;
-    grid-template-columns: 50px 1fr 1fr;
-    font-size: 16px;
+    grid-template-columns: 50px 1fr 150px;
+    font-size: 14px;
 
     box-shadow: 0 0 7px 0 rgba(50, 50, 50, .65);
     background-color: $div-content-background-color;
@@ -53,11 +53,60 @@ $div-content-background-color: lighten($content-background-color, 5%);
         border-right: 2px solid $secondary-color;
       }
     }
+  }
 
-    .product-slot, .actions-slot {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
+  .product-slot, .actions-slot {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+  }
+
+  .actions-slot {
+    justify-content: space-around;
+
+    a {
+      min-width: 75px;
+      margin: 10px 0;
+      padding: 10px 5px;
+      background-color: $secondary-color;
+      color: $div-content-background-color;
+
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 250ms linear;
+
+      &:hover {
+        background-color: $div-content-background-color;
+        color: $secondary-color;
+        border: 1px solid $secondary-color;
+      }
+    }
+  }
+}
+
+// Responsive styles for List view
+@media #{$min-width-2} {
+  #main-section {
+    grid-template-columns: auto 1fr;
+  }
+
+  #content {
+    h1, > div {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    > div {
+      padding: 25px;
+      grid-template-columns: 50px 1fr 1fr;
+      font-size: 16px;
     }
 
     .actions-slot {

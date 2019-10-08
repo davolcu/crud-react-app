@@ -5,9 +5,9 @@ $min-width-2: 'only screen and (min-width: 768px)';
 // Min width standard for laptops (iPad horizontal)
 $min-width-3: 'only screen and (min-width: 1024px)';
 
-// Max width lowest mobile resolution
-$max-width-1: 'only screen and (min-width: 767px)';
+// Max width lowest mobile resolution rank (Will never be used)
+$max-width-1: 'only screen and (max-width: 319px)';
+// Max width mobile resolutions
+$max-width-2: 'only screen and (max-width: 767px)';
 // Max width tablet resolutions
-$max-width-2: 'only screen and (min-width: 1023px)';
-// Max width standard for biggest laptops (break on 1440)
-$max-width-3: 'only screen and (min-width: 1440px)';
+$max-width-3: 'only screen and (max-width: 1023px)';

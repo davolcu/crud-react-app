@@ -51,7 +51,7 @@ const CSSLoader = {
 
 // Image loader to import them correctly on TS files
 const FileLoader = {
-    test: /\.(png|jpe?g|svg)$/,
+    test: /\.(png|jpe?g|svg|ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
     exclude: /node_modules/,
     use: {
         loader: 'file-loader',

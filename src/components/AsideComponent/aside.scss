@@ -8,11 +8,10 @@ $active-aside-background-color: lighten($aside-background-color, 15%);
 
 // Custom styles for the Aside Component
 #aside {
-  min-width: 230px;
   background-color: $aside-background-color;
 
   ul {
-    width: 230px;
+    width: 100%;
     margin: 15px 0;
     position: fixed;
     color: $background-color;
@@ -33,5 +32,30 @@ $active-aside-background-color: lighten($aside-background-color, 15%);
     color: $background-color;
     text-decoration: none;
     cursor: pointer;
+  }
+}
+
+// Responsive styles for aside component
+@media #{$max-width-2} {
+  #aside {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    opacity: 0;
+    transition: opacity 500ms linear;
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+}
+
+@media #{$min-width-2} {
+  #aside {
+    min-width: 230px;
+
+    ul {
+      width: 230px;
+    }
   }
 }
