@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "password": 12345
+    },
+    {
+      "id": 2,
+      "email": "admin@test.com",
+      "password": 12345
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "slug": "product-de-prueba-1"
+    },
+    {
+      "id": 2,
+      "slug": "product-de-prueba-2"
+    },
+    {
+      "id": 3,
+      "slug": "product-de-prueba-3"
+    },
+    {
+      "id": 4,
+      "slug": "product-de-prueba-4"
+    },
+    {
+      "id": 5,
+      "slug": "product-de-prueba-6"
+    }
+  ]
+}
