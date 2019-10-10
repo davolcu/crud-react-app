@@ -31,8 +31,4 @@ module.exports = {
             loaders.FileLoader
         ]
     },
-
-    externals: {
-        jquery: 'jQuery'
-    }
 };
