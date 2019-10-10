@@ -53,6 +53,7 @@ $active-aside-background-color: lighten($aside-background-color, 15%);
 @media #{$min-width-2} {
   #aside {
     display: block !important;
+    opacity: 1 !important;
     min-width: 230px;
 
     ul {

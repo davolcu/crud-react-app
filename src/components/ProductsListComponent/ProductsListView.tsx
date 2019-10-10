@@ -6,7 +6,11 @@ import Aside from '../AsideComponent/Aside';
 import ProductsList from './ProductsList';
 import './list.scss';
 
-const ProductsListView = () => {
+interface Path {
+    route: string;
+}
+
+const ProductsListView = ({route}: Path) => {
     const [productsList, setProducts]: Array<any> = useState([]);
 
     useEffect(() => {
@@ -23,9 +27,10 @@ const ProductsListView = () => {
         <section id={'main-section'}>
             <Header/>
 
-            <Aside route={'/products'}/>
+            <Aside route={route}/>
             <div id={'content'}>
-                <ProductsList products={productsList}/>
+                {route === '/products' ? <ProductsList products={productsList}/> :
+                    <h1> Aún estamos trabajando en el desarrollo de esta página, disculpa las molestias </h1>}
             </div>
         </section>
     );
