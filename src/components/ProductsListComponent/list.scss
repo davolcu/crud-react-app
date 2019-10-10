@@ -1,6 +1,7 @@
 // App colors and other variables
 @import "../../styles/colors.scss";
 @import "../../styles/media-queries.scss";
+@import "../../styles/mixins.scss";
 
 // Custom variables for this view
 $content-background-color: lighten($primary-color, 75%);
@@ -39,7 +40,7 @@ $div-content-background-color: lighten($content-background-color, 5%);
     padding: 15px 10px;
 
     display: grid;
-    grid-template-columns: 50px 1fr 150px;
+    grid-template-columns: 50px 1fr 105px;
     font-size: 14px;
 
     box-shadow: 0 0 7px 0 rgba(50, 50, 50, .65);
@@ -65,23 +66,23 @@ $div-content-background-color: lighten($content-background-color, 5%);
     justify-content: space-around;
 
     a {
-      min-width: 75px;
-      margin: 10px 0;
-      padding: 10px 5px;
-      background-color: $secondary-color;
-      color: $div-content-background-color;
+      @include main-button($div-content-background-color);
+
+      min-width: 30px;
+      margin: 10px 0 10px 5px;
+      padding: 5px;
 
       text-align: center;
       text-decoration: none;
-      border: 1px solid transparent;
       border-radius: 5px;
-      cursor: pointer;
-      transition: all 250ms linear;
 
-      &:hover {
-        background-color: $div-content-background-color;
-        color: $secondary-color;
-        border: 1px solid $secondary-color;
+      svg {
+        display: inline-block;
+        width: 15px;
+      }
+
+      span {
+        display: none;
       }
     }
   }
@@ -110,26 +111,16 @@ $div-content-background-color: lighten($content-background-color, 5%);
     }
 
     .actions-slot {
-      justify-content: space-around;
-
       a {
         min-width: 75px;
-        margin: 10px 0;
         padding: 10px 5px;
-        background-color: $secondary-color;
-        color: $div-content-background-color;
 
-        text-align: center;
-        text-decoration: none;
-        border: 1px solid transparent;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 250ms linear;
+        svg {
+          display: none;
+        }
 
-        &:hover {
-          background-color: $div-content-background-color;
-          color: $secondary-color;
-          border: 1px solid $secondary-color;
+        span {
+          display: block;
         }
       }
     }

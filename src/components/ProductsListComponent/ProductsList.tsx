@@ -1,5 +1,7 @@
 // Out of the box imports
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEye, faEdit, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 interface ProductsList {
     products: Array<any>;
@@ -23,9 +25,18 @@ const ProductsList = ({products}: ProductsList) => {
                         <div className={'product-slot'}> {product.id}</div>
                         <div className={'product-slot'}> {product.slug}</div>
                         <div className={'actions-slot'}>
-                            <a href={'#'} onClick={e => e.preventDefault()}> Mostrar </a>
-                            <a href={'#'} onClick={e => e.preventDefault()}> Editar </a>
-                            <a href={'#'} onClick={e => e.preventDefault()}> Eliminar </a>
+                            <a href={'#'} onClick={e => e.preventDefault()}>
+                                <FontAwesomeIcon icon={faEye}/>
+                                <span>Mostrar</span>
+                            </a>
+                            <a href={'#'} onClick={e => e.preventDefault()}>
+                                <FontAwesomeIcon icon={faEdit}/>
+                                <span>Editar</span>
+                            </a>
+                            <a href={'#'} onClick={e => e.preventDefault()}>
+                                <FontAwesomeIcon icon={faTimes}/>
+                                <span>Eliminar</span>
+                            </a>
                         </div>
                     </React.Fragment>
                 ))}
