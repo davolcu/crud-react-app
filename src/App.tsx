@@ -5,6 +5,8 @@ import {useRoutes} from 'hookrouter';
 import LoginView from './components/LoginComponent/LoginView';
 import ProductsListView from './components/ProductsListComponent/ProductsListView';
 import './styles/styles.scss';
+// Import favicon to build folder
+import favicon from '../public/favicon.ico';
 
 // Routes for router hook
 const routes = {
