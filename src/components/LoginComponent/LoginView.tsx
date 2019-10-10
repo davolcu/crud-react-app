@@ -1,7 +1,7 @@
 // Out of the box imports
 import React, {useState} from 'react';
 import {navigate} from 'hookrouter';
-import $ from 'jQuery';
+import $ from 'jquery';
 // Custom imports
 import logo from '../../../public/logo512.png';
 import './login.scss';
