@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/davolcu/crud-react-app/issues"
   },
-  "homepage": "https://github.com/davolcu/crud-react-app#readme",
+  "homepage": "https://github.com/davolcu/crud-react-app",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
