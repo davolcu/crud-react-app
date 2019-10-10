@@ -23,10 +23,16 @@ module.exports = {
         rules: [
             // JavaScript Loader
             loaders.JSLoader,
+            // JQuery Loader
+            loaders.JQLoader,
             // CSS Loader
             loaders.CSSLoader,
             // Img Loader
             loaders.FileLoader
         ]
     },
+
+    externals: {
+        jquery: 'jQuery'
+    }
 };

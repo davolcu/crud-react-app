@@ -61,6 +61,12 @@ $login-background-color: lighten($primary-color, 70%);
       border: 1px solid $secondary-color;
     }
   }
+
+  .error-line {
+    color: $error-color;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 }
 
 // Responsive styles for login view

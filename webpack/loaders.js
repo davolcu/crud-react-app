@@ -20,6 +20,18 @@ const JSLoader = {
     },
 };
 
+// JQuery loader to add it to the templates
+const JQLoader = {
+    test: /jquery.+\.(ts|js)x?$/,
+    use: [{
+        loader: 'expose-loader',
+        options: 'jQuery'
+    }, {
+        loader: 'expose-loader',
+        options: '$'
+    }]
+};
+
 // Scss, Sass, Css extractor and converter to Prefixed CSS
 const CSSLoader = {
     test: /\.(sa|sc|c)ss$/,
@@ -63,6 +75,7 @@ const FileLoader = {
 
 module.exports = {
     JSLoader: JSLoader,
+    JQLoader: JQLoader,
     CSSLoader: CSSLoader,
     FileLoader: FileLoader
 };

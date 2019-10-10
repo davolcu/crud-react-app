@@ -1,32 +1,34 @@
 // Out of the box imports
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 // Custom imports
 import Header from '../HeaderComponent/Header';
 import Aside from '../AsideComponent/Aside';
+import ProductsList from './ProductsList';
 import './list.scss';
 
-const ProductsListView = () => (
-    <section id={'main-section'}>
-        <Header/>
+const ProductsListView = () => {
+    const [productsList, setProducts]: Array<any> = useState([]);
 
-        <Aside route={'/products'}/>
-        <div id={'content'}>
-            <h1> Bienvenid@ a la sección de gestión de productos </h1>
-            <div>
-                <div> Id </div>
-                <div> Slug </div>
-                <div> Acciones </div>
+    useEffect(() => {
+        fetch('https://my-json-server.typicode.com/davolcu/crud-react-app/products')
+            .then(response => {
+                return response.json();
+            })
+            .then(products => {
+                setProducts(products);
+            });
+    }, []);
 
-                <div className={'product-slot'}> 1 </div>
-                <div className={'product-slot'}> producto-de-prueba-1 </div>
-                <div className={'actions-slot'}>
-                    <a href={'#'} onClick={e => e.preventDefault()}> Mostrar </a>
-                    <a href={'#'} onClick={e => e.preventDefault()}> Editar </a>
-                    <a href={'#'} onClick={e => e.preventDefault()}> Eliminar </a>
-                </div>
+    return (
+        <section id={'main-section'}>
+            <Header/>
+
+            <Aside route={'/products'}/>
+            <div id={'content'}>
+                <ProductsList products={productsList}/>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 export default ProductsListView;
