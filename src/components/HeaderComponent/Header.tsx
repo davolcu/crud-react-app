@@ -7,7 +7,7 @@ import './header.scss';
 
 // Arrow function to toggle the Aside menu on lower resolutions
 const toggleAside = () => {
-    if (window.getComputedStyle(document.querySelector('#content svg') as Element).display !== 'none') {
+    if (window.getComputedStyle(document.querySelector('#aside') as Element).position === 'absolute') {
         const aside = document.querySelector('#aside') as Element,
             notDisplayed = aside.style.display !== 'block';
 
