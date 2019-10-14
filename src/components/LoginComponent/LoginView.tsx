@@ -41,7 +41,7 @@ const LoginView = () => {
         <section id={'form-section'}>
             <img src={logo} alt={'CRUD Logo'}/>
 
-            <form action={actionUrl} method={'post'} onSubmit={e => submitHandler(e)}>
+            <form action={actionUrl} method={'post'} noValidate={true} onSubmit={e => submitHandler(e)}>
                 <p>Autentificación</p>
 
                 <div className={errorList.length > 0 ? 'error-line' : ''}> {errorList} </div>
