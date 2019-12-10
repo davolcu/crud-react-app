@@ -1,5 +1,5 @@
 ## UPDATE ON 10th OF DECEMBER 2019.
-## DEPRECATED PROJECT, CURRENTLY WAITING ON IT'S NEXT STEP AS A REAL MERN CRUD
+## DEPRECATED PROJECT, CURRENTLY WORKING ON IT'S NEXT STEP AS A REAL MERN CRUD
 
 This a full responsive CRUD application made up with React: [CRUD React App](https://crud-app-react.netlify.com/).
 
